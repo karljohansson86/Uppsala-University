@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1447288259000" analysisTimestamp="1447288593298" release="">
+  <Project projectName="Regsim">
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/Customer.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/CustomerQuick.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/CustomerRegular.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/CustomerSlow.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/LinkedQueue$Node.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/LinkedQueue.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/Queue$EmptyQueueException.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/Queue.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/Register.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/Simulation.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/Simulator.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/Store$NoRegisterException.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/Store.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/Asker.class</Jar>
+    <Jar>/Users/Marcus/Google Drive/UU/C/maan2874/regsim/Options.class</Jar>
+    <WrkDir>/Users/Marcus/Google Drive/UU/C/maan2874/regsim</WrkDir>
+  </Project>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="1" rank="15" abbrev="DLS" category="STYLE">
+    <Class classname="Asker">
+      <SourceLine classname="Asker" sourcefile="Asker.java" sourcepath="Asker.java"/>
+    </Class>
+    <Method classname="Asker" name="questionInt" signature="(Ljava/lang/String;II)I" isStatic="true">
+      <SourceLine classname="Asker" start="37" end="64" startBytecode="0" endBytecode="63" sourcefile="Asker.java" sourcepath="Asker.java"/>
+    </Method>
+    <LocalVariable name="reader" register="3" pc="11" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Asker" start="37" end="37" startBytecode="10" endBytecode="10" sourcefile="Asker.java" sourcepath="Asker.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="reader"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="Asker">
+      <SourceLine classname="Asker" sourcefile="Asker.java" sourcepath="Asker.java"/>
+    </Class>
+    <Method classname="Asker" name="questionBool" signature="(Ljava/lang/String;)Z" isStatic="true">
+      <SourceLine classname="Asker" start="9" end="31" startBytecode="0" endBytecode="259" sourcefile="Asker.java" sourcepath="Asker.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner" start="608" end="609" startBytecode="0" endBytecode="43" sourcefile="Scanner.java" sourcepath="java/util/Scanner.java"/>
+    </Method>
+    <SourceLine classname="Asker" start="9" end="9" startBytecode="7" endBytecode="7" sourcefile="Asker.java" sourcepath="Asker.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="Asker">
+      <SourceLine classname="Asker" sourcefile="Asker.java" sourcepath="Asker.java"/>
+    </Class>
+    <Method classname="Asker" name="questionInt" signature="(Ljava/lang/String;II)I" isStatic="true">
+      <SourceLine classname="Asker" start="37" end="64" startBytecode="0" endBytecode="333" sourcefile="Asker.java" sourcepath="Asker.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner" start="608" end="609" startBytecode="0" endBytecode="43" sourcefile="Scanner.java" sourcepath="java/util/Scanner.java"/>
+    </Method>
+    <SourceLine classname="Asker" start="37" end="37" startBytecode="7" endBytecode="7" sourcefile="Asker.java" sourcepath="Asker.java"/>
+  </BugInstance>
+  <BugInstance type="SBSC_USE_STRINGBUFFER_CONCATENATION" priority="2" rank="18" abbrev="SBSC" category="PERFORMANCE">
+    <Class classname="LinkedQueue">
+      <SourceLine classname="LinkedQueue" sourcefile="LinkedQueue.java" sourcepath="LinkedQueue.java"/>
+    </Class>
+    <Method classname="LinkedQueue" name="toString" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="LinkedQueue" start="98" end="107" startBytecode="0" endBytecode="206" sourcefile="LinkedQueue.java" sourcepath="LinkedQueue.java"/>
+    </Method>
+    <SourceLine classname="LinkedQueue" start="102" end="102" startBytecode="18" endBytecode="18" sourcefile="LinkedQueue.java" sourcepath="LinkedQueue.java"/>
+  </BugInstance>
+  <BugInstance type="SBSC_USE_STRINGBUFFER_CONCATENATION" priority="2" rank="18" abbrev="SBSC" category="PERFORMANCE">
+    <Class classname="Store">
+      <SourceLine classname="Store" sourcefile="Store.java" sourcepath="Store.java"/>
+    </Class>
+    <Method classname="Store" name="toString" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="Store" start="209" end="214" startBytecode="0" endBytecode="195" sourcefile="Store.java" sourcepath="Store.java"/>
+    </Method>
+    <SourceLine classname="Store" start="211" end="211" startBytecode="26" endBytecode="26" sourcefile="Store.java" sourcepath="Store.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Thu, 12 Nov 2015 01:30:59 +0100" total_classes="15" referenced_classes="58" total_bugs="5" total_size="402" num_packages="1" java_version="1.7.0_80" vm_version="24.80-b11" cpu_seconds="5.90" clock_seconds="17.48" peak_mbytes="170.70" alloc_mbytes="683.00" gc_seconds="0.04" priority_2="2" priority_1="3">
+    <PackageStats package="" total_bugs="5" total_types="15" total_size="402" priority_2="2" priority_1="3">
+      <ClassStats class="Asker" sourceFile="Asker.java" interface="false" size="32" bugs="3" priority_1="3"/>
+      <ClassStats class="Customer" sourceFile="Customer.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="CustomerQuick" sourceFile="CustomerQuick.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="CustomerRegular" sourceFile="CustomerRegular.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="CustomerSlow" sourceFile="CustomerSlow.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="LinkedQueue" sourceFile="LinkedQueue.java" interface="false" size="40" bugs="1" priority_2="1"/>
+      <ClassStats class="LinkedQueue$Node" sourceFile="LinkedQueue.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="Options" sourceFile="Options.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="Queue" sourceFile="Queue.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="Queue$EmptyQueueException" sourceFile="Queue.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="Register" sourceFile="Register.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="Simulation" sourceFile="Simulation.java" interface="false" size="90" bugs="0"/>
+      <ClassStats class="Simulator" sourceFile="Simulator.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="Store" sourceFile="Store.java" interface="false" size="76" bugs="1" priority_2="1"/>
+      <ClassStats class="Store$NoRegisterException" sourceFile="Store.java" interface="false" size="3" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="137" invocations="482" avgMicrosecondsPerInvocation="286" maxMicrosecondsPerInvocation="13286" standardDeviationMircosecondsPerInvocation="758"/>
+      <ClassProfile name="edu.umd.cs.findbugs.FindBugs2" totalMilliseconds="128" invocations="2" avgMicrosecondsPerInvocation="64455" maxMicrosecondsPerInvocation="111533" standardDeviationMircosecondsPerInvocation="47078"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="63" invocations="58" avgMicrosecondsPerInvocation="1090" maxMicrosecondsPerInvocation="11814" standardDeviationMircosecondsPerInvocation="2148"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="57" invocations="58" avgMicrosecondsPerInvocation="982" maxMicrosecondsPerInvocation="8474" standardDeviationMircosecondsPerInvocation="1642"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="46" invocations="63" avgMicrosecondsPerInvocation="745" maxMicrosecondsPerInvocation="13885" standardDeviationMircosecondsPerInvocation="1855"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="46" invocations="63" avgMicrosecondsPerInvocation="735" maxMicrosecondsPerInvocation="4304" standardDeviationMircosecondsPerInvocation="918"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="42" invocations="63" avgMicrosecondsPerInvocation="668" maxMicrosecondsPerInvocation="3889" standardDeviationMircosecondsPerInvocation="831"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="39" invocations="213" avgMicrosecondsPerInvocation="184" maxMicrosecondsPerInvocation="1359" standardDeviationMircosecondsPerInvocation="203"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="34" invocations="485" avgMicrosecondsPerInvocation="70" maxMicrosecondsPerInvocation="16358" standardDeviationMircosecondsPerInvocation="743"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="28" invocations="65" avgMicrosecondsPerInvocation="432" maxMicrosecondsPerInvocation="3279" standardDeviationMircosecondsPerInvocation="584"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="25" invocations="63" avgMicrosecondsPerInvocation="411" maxMicrosecondsPerInvocation="3208" standardDeviationMircosecondsPerInvocation="525"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="25" invocations="442" avgMicrosecondsPerInvocation="58" maxMicrosecondsPerInvocation="955" standardDeviationMircosecondsPerInvocation="102"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="22" invocations="63" avgMicrosecondsPerInvocation="361" maxMicrosecondsPerInvocation="1795" standardDeviationMircosecondsPerInvocation="391"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="22" invocations="48" avgMicrosecondsPerInvocation="459" maxMicrosecondsPerInvocation="3085" standardDeviationMircosecondsPerInvocation="555"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="16" invocations="58" avgMicrosecondsPerInvocation="287" maxMicrosecondsPerInvocation="1487" standardDeviationMircosecondsPerInvocation="391"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="13" invocations="58" avgMicrosecondsPerInvocation="227" maxMicrosecondsPerInvocation="1741" standardDeviationMircosecondsPerInvocation="368"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="12" invocations="82" avgMicrosecondsPerInvocation="151" maxMicrosecondsPerInvocation="889" standardDeviationMircosecondsPerInvocation="213"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

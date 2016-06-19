@@ -1,0 +1,6 @@
+Kurs1;Kursbok1;10
+Kurs2;Kursbok2;10
+Kurs3;Kursbok3;10
+Kurs4;Kursbok4;10
+Kurs5;Kursbok5;10
+Kurs6;Kursbok6;10

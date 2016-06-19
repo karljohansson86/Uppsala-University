@@ -1,0 +1,2 @@
+RumÖst;Kurs1;Lärare1
+RumVäst;Kurs2;Lärare2

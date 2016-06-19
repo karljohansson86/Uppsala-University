@@ -1,0 +1,33 @@
+
+controller.c,1282
+#define Clear_stdin 8,120
+#define PRODUCTS_PER_PAGE 11,175
+#define POSITIVE_ONLY 12,204
+char* controller_askQuestionString(57,1370
+int controller_askQuestionInt(63,1470
+char controller_readChar(69,1638
+char controller_readCharInRange(77,1802
+char controller_askQuestionChar(91,2093
+bool controller_askQuestionBool(106,2441
+char *controller_readNonEmptyString(controller_readNonEmptyString114,2610
+void controller_removeFromCart(128,2870
+void controller_showCart(153,3543
+char controller_askForMenuChoice(176,3988
+void controller_actOnMenuChoice(182,4171
+void controller_setProductName(221,4930
+void controller_setProductDescription(233,5341
+void controller_setProductPrice(239,5564
+void controller_addProductShelf(244,5725
+void controller_removeProductShelf(275,6790
+void controller_updateProductShelfCount(297,7547
+void controller_editProductShelves(324,8595
+void controller_editNewAddProduct(354,9294
+void controller_addProduct(392,10346
+void controller_displayProduct(444,11876
+void controller_removeProduct(475,12645
+void controller_editProduct(525,13971
+bool controller_verifyRange(602,15899
+void controller_addToCart(610,16033
+void controller_undoAction(644,17134
+void controller_listAllProducts(650,17327
+void controller_quitProgram 707,18804

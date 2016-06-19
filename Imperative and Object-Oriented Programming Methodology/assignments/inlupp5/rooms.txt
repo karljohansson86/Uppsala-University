@@ -1,0 +1,5 @@
+FooBar;RumNorr;RumÖst;RumSöder;RumVäst;false;false;true;false
+RumNorr;X;X;FooBar;X;X;X;false;X
+RumÖst;X;X;X;FooBar;X;X;X;false
+RumSöder;FooBar;X;X;X;true;X;X;X
+RumVäst;X;FooBar;X;X;X;false;X;X

@@ -1,0 +1,18 @@
+<Project projectName="Regsim">
+  <Jar>./Customer.class</Jar>
+  <Jar>./CustomerQuick.class</Jar>
+  <Jar>./CustomerRegular.class</Jar>
+  <Jar>./CustomerSlow.class</Jar>
+  <Jar>./LinkedQueue$Node.class</Jar>
+  <Jar>./LinkedQueue.class</Jar>
+  <Jar>./Queue$EmptyQueueException.class</Jar>
+  <Jar>./Queue.class</Jar>
+  <Jar>./Register.class</Jar>
+  <Jar>./Simulation.class</Jar>
+  <Jar>./Simulator.class</Jar>
+  <Jar>./Store$NoRegisterException.class</Jar>
+  <Jar>./Store.class</Jar>
+  <Jar>./Asker.class</Jar>
+  <Jar>./Options.class</Jar>
+  <WrkDir>.</WrkDir>
+</Project>

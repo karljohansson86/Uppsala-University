@@ -1,0 +1,6 @@
+Kursbok1;Author1;1
+Kursbok2;Author2;2
+Kursbok3;Author3;2
+Kursbok4;Author4;2
+Kursbok5;Author5;3
+Kursbok6;Author6;3

@@ -1,0 +1,6 @@
+Kurs1;Hur många bultar?;10000000;100;10;1
+Kurs2;Fråga 2;Svar1;Svar2;Svar3;2
+Kurs3;Fråga 3;Svar1;Svar2;Svar3;3
+Kurs4;Fråga 4;Svar1;Svar2;Svar3;3
+Kurs5;Fråga 5;Svar1;Svar2;Svar3;3
+Kurs6;Fråga 5;Svar1;Svar2;Svar3;3
