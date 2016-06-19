@@ -1,0 +1,161 @@
+/**
+ * Game of luck: Implementation of the Gamemaster
+ *
+ * Course: Operating Systems and Multicore Programming - OSM lab
+ * assignment 1: game of luck.
+ *
+ * Author: Nikos Nikoleris <nikos.nikoleris@it.uu.se>
+ *
+ */
+
+#include <stdio.h> /* I/O functions: printf() ... */
+#include <stdlib.h> /* rand(), srand() */
+#include <unistd.h> /* read(), write() calls */
+#include <assert.h> /* assert() */
+#include <time.h>   /* time() */
+#include <signal.h> /* kill(), raise() and SIG???? */
+
+#include <sys/types.h> /* pid */
+#include <sys/wait.h> /* waitpid() */
+
+#include "common.h"
+
+int main(int argc, char *argv[])
+{
+  int i, seed;
+
+  /* TODO: Use the following variables in the exec system call. Using the
+   * function sprintf and the arg1 variable you can pass the id parameter
+   * to the children
+   */
+  
+    char arg0[] = "./shooter";
+    char arg1[10];
+    char *args[] = {arg0, arg1, NULL};
+ 
+  
+  
+  /*initialize the communication with the players */
+  int pipes_to_child[NUM_PLAYERS][2];
+  int pipes_to_parent[NUM_PLAYERS][2];
+
+  int status;
+
+  for (i = 0; i < NUM_PLAYERS; i++) {
+    
+    // Pipes to child
+    status = pipe(pipes_to_child[i]);
+    if(status < 0) {
+      perror("FAILED TO PIPE TO CHILD");
+    }
+    
+    // Pipes to parent
+    status = pipe(pipes_to_parent[i]);
+    if(status < 0) {
+      perror("FAILED TO PIPE TO PARENT");
+    }
+  }
+  
+  
+  pid_t child_list[NUM_PLAYERS];
+  
+  for (i = 0; i < NUM_PLAYERS; i++) {
+
+    pid_t id = fork();   
+    if(id == -1) {
+      perror("FAILED TO FORK");
+    } 
+    else if(id == 0) {
+      
+      
+      //Close channels not used and make pipes one-way
+      int k;
+      for(k = 0; k < NUM_PLAYERS; k++) {
+       
+        if(k == i){
+          close(pipes_to_child[i][1]);
+          close(pipes_to_parent[i][0]);
+          continue;
+        }        
+        close(pipes_to_child[k][0]);
+        close(pipes_to_child[k][1]);
+        close(pipes_to_parent[k][0]);
+        close(pipes_to_parent[k][1]);
+      }
+
+      dup2(pipes_to_child[i][0],STDIN_FILENO);
+      dup2(pipes_to_parent[i][1],STDOUT_FILENO);
+      
+      
+      sprintf(arg1,"%d", i);
+      
+      // Execute the binary shooter
+      execv(arg0,args);
+      
+      //shooter(i,pipes_to_child[i][0],pipes_to_parent[i][1]);
+      
+    } else {
+      child_list[i] = id;
+      
+      //Close channels not used and make pipes one-way
+      close(pipes_to_child[i][0]);
+      close(pipes_to_parent[i][1]);
+      
+    }    
+  }
+
+  seed = time(NULL);
+  
+  for (i = 0; i < NUM_PLAYERS; i++) {
+    
+    seed++;
+    
+    //Send seed to players
+    status = write(pipes_to_child[i][1],&seed,sizeof(int));
+
+    close(pipes_to_child[i][1]);
+  }
+  
+  int score = 0;
+  int winning_score = 0;
+  
+  
+  for (i = 0; i < NUM_PLAYERS; i++) {
+    
+    //Read player score
+    status = read(pipes_to_parent[i][0],&score,sizeof(int));
+    if(status < 0) {
+      perror("FAILED TO READ FROM CHILD");
+    }
+
+    close(pipes_to_parent[i][0]);
+    
+    if(score > winning_score) {
+      winning_score = score;
+      winner = i;   
+    }
+    
+  }
+  
+  printf("master: player %d WINS\n", winner);
+
+  // Signal the winner 
+  kill(child_list[winner],SIGUSR1);
+
+  // Signal all players the end of game
+  for (i = 0; i < NUM_PLAYERS; i++) {
+    kill(child_list[i],SIGUSR2);
+    
+  }
+  
+  printf("master: the game ends\n");
+
+  
+  // Cleanup resources and exit with success
+  for (i = 0; i < NUM_PLAYERS; i++) {
+    pid_t toStop = wait(&status);
+    toStop = toStop; //Get rid of warning
+  }
+
+  return 0;
+}
