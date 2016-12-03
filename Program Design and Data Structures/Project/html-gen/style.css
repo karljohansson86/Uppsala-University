@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #333;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  background: none;
+  border: 1px solid #F1CE59;
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  color: #F1CE59;
+  letter-spacing: 3px;
+  padding: 6px 14px;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.sudoku {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0 0 -225px;
+  text-align: center;
+}
+
+.square {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-right: 1px dashed #CCC;
+  border-bottom: 1px dashed #CCC;
+  outline: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.square.odd {
+  background: rgba(255,255,255,.1);
+}
+
+.square:nth-child(9n+3),
+.square:nth-child(9n+6) {
+  border-right: 1px solid #333;
+}
+.square.bot-row {
+  border-bottom: 1px solid #333;
+}
+
+.square:nth-child(9n+9) {
+  border-right: none;
+}
+.square.last-row {
+  border-bottom: none;
+}
