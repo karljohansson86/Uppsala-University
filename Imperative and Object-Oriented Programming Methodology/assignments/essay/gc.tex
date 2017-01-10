@@ -20,7 +20,7 @@
 
 
 \section{Abstract}
-Manual memory management is time consuming for programmers and a sourse for errors. There is a variety of different automatic memory management called garbage collectors that solves the issues one might have when handling the memory manually. But they come with different strengths and weaknessess. In this essay I have chosen to compare two different methods of garbage collection, the mark and sweep and the generational garbage collector.
+Manual memory management is time consuming for programmers and a source for errors. There is a variety of different automatic memory management called garbage collectors that solves the issues one might have when handling the memory manually. But they come with different strengths and weaknessess. In this essay I have chosen to compare two different methods of garbage collection, the mark and sweep and the generational garbage collector.
 The mark and sweep algoritm, first marks all objects that are reacheable and still in use and then traverse the heap and collects all the objects that are not in use so the memory can be reused. 
 The generational garbage collector is based on the weak generational hypothesis which states that most objects die young and old objects continue to live. The heap is devided into generations and the allocations of new objects are done on the first generation. The minor collections are done on the separate generations and if the objects is still in use it will get promoted to the next generation.
 \pagebreak
